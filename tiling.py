@@ -147,11 +147,14 @@ class Grid(VGroup):
 
 
 
-class OpeningManim(Scene):
+class Tiling(Scene):
 	def construct(self):
 		# thisorder = 4, square_side=5.5/size, square_spacing=0.8/size, sounds good
-		missing_piece=np.array([10,5])
-		thisorder = 4
+		thisorder = 3
+
+		# Coordinates of the missing_piece must be in the interval [0, ..., 2**thisorder-1]
+		missing_piece=np.array([6,4])
+
 		size = 2**thisorder
 		g = Grid(order=thisorder, square_side=5.5/size, square_spacing=0)
 		g.set_missing_piece(missing_piece)
